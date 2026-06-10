@@ -41,7 +41,7 @@ our $metadata = {
     description     => 'Un OPAC pour chaque saison.',
     date_authored   => '2025-09-09',
     date_updated    => '2025-12-19',
-    version         => '1.1.0',
+    version         => '1.1.1',
     minimum_version => '24.05',
 };
 
