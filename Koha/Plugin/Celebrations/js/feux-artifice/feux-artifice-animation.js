@@ -48,10 +48,12 @@ document.addEventListener('DOMContentLoaded', function() {
         requestAnimFrame(loop);
       })();
         setInterval(function() {
-            var randX = rand(0, window.innerWidth);
-            var randY = rand(50, window.innerHeight/1.5);
-            var hue = rand(self.hueMin, self.hueMax);
-            self.createFireworks(self.canvas.width/2, self.canvas.height, randX, randY);
+            if(! document.hidden){
+              var randX = rand(0, window.innerWidth);
+              var randY = rand(50, window.innerHeight/1.5);
+              var hue = rand(self.hueMin, self.hueMax);
+              self.createFireworks(self.canvas.width/2, self.canvas.height, randX, randY);
+            }
         }, 500);
     };
     var Particle = function(x, y, hue){
