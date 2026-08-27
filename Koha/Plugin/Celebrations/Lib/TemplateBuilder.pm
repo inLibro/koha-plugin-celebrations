@@ -287,10 +287,10 @@ Retour : HTML nettoyé.
 
 sub clean_preview_html {
     my ($self, $html) = @_;
-    $html =~ s{<script[^>]+Celebrations-api[^>]*></script>}{}gis;
+    $html =~ s{<script\b[^>]*(?:(?!<script\b|<\/script\s*>)[\s\S])*Celebrations-api(?:(?!<script\b|<\/script\s*>)[\s\S])*<\/script\s*>}{}gis;
     $html =~ s{<link[^>]+Celebrations-api[^>]*>}{}gis;
     $html =~ s{<style[^>]+id=["']theme-inline-css["'][^>]*>.*?</style>}{}gis;
-    $html =~ s{<!--.*?Celebrations.*?-->}{}gis;
+    $html =~ s{<!--(?:(?!<!--\b|-->\s*)[\s\S])*Celebrations(?:(?!<!--\b|-->\s*)[\s\S])*-->}{}gis;
     return $html;
 }
 

@@ -1,5 +1,4 @@
 node_modules/
-*.bundle.js
-*.lock
+*bundle.js
+*lock.json
 .bak
-Koha/Plugin/Celebrations/js/celebrations-bundle.js

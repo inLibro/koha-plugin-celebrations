@@ -177,6 +177,7 @@ sub collect_theme_js {
     my %js_options;
     return (\@js_tags, \%js_options) unless exists $conf->{elements};
     my $api_ns = $self->{plugin}->api_namespace;
+    $js_options{"api_namespace"} = $api_ns;
     foreach my $element (keys %{ $conf->{elements} }) {
         my $enabled = $theme_conf->{elements}{$element}{enabled} // '';
         next unless $enabled;
